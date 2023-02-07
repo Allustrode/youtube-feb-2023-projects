@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            transition: .2s;
+        }
+
+        .container {
+            display: grid;
+            height: 100vh;
+            place-items: center;
+            background: rgb(0, 0, 0);
+        }
+
+        .text {
+            position: absolute;
+            padding: 10px 30px;
+            background: linear-gradient(80deg, rgb(173, 142, 0), rgb(55, 173, 0));
+            color: white;
+            transform: scaleY(0) scaleX(2);
+            animation: color 8s linear infinite;
+        }
+
+        @keyframes color {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text" id="text1">Hello Buddy</h1>
+        <h1 class="text" id="text2">Welcome To My Youtube</h1>
+        <h1 class="text" id="text3">Allustrode</h1>
+        <h1 class="text" id="text4">Don't Forget To</h1>
+        <h1 class="text" id="text5">SUBSCRIBE</h1>
+    </div>
+
+    <script>
+        let text = document.querySelectorAll(".text");
+        let i = 0;
+
+        setInterval(() => {
+            if (i >= text.length) { i = 0; }
+
+            text[i].style.transform = `scaleY(1) scaleX(1)`;
+
+            setTimeout(() => {
+                text[i - 1].style.transform = `scaleY(0) scaleX(2)`;
+            }, 2500);
+
+            i++;
+        }, 3000);
+
+    </script>
+</body>
+
+</html>
