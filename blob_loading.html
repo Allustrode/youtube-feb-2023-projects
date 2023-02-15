@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: Arial;
+            color: #fff;
+        }
+
+        body {
+            overflow: hidden;
+            display: grid;
+            place-content: center;
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+            width: 100vh;
+            background: rgb(255, 255, 255);
+            filter: blur(10px) contrast(20);
+            animation: rotating 5s linear infinite;
+        }
+
+        @keyframes rotating {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        h5 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .item {
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            background: rgb(0, 0, 0);
+            transform: translate(-50%, -80%);
+            animation: move1 1s ease-out infinite alternate;
+        }
+
+        .item:nth-child(2) {
+            animation-delay: .2s;
+            transform: translate(-80%, -30%);
+            animation: move2 1s ease-out infinite alternate;
+        }
+
+        .item:nth-child(3) {
+            animation-delay: .4s;
+            transform: translate(-20%, -30%);
+            animation: move3 1s ease-out infinite alternate;
+        }
+
+        @keyframes move1 {
+            0% {
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                transform: translate(-50%, -80%);
+            }
+        }
+
+        @keyframes move2 {
+            0% {
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                transform: translate(-80%, -30%);
+            }
+        }
+
+        @keyframes move3 {
+            0% {
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                transform: translate(-20%, -30%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <h5>Loading...</h5>
+</body>
+
+</html>
